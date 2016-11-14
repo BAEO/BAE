@@ -24,7 +24,8 @@ class addRestFrameVars(module):
     Xsvect = kaonvect+missingvect
     mXs = Xsvect.M()
     mXs_branch = t.Branch('mXs','d','mXs/d')
-    mXs_branch.Fill()
+    mXs_branch.Fill()i
+
     return True
   
 
