@@ -85,23 +85,10 @@ tupleB.Decay = decay
 
 tupleB.ToolList =  [
       "TupleToolKinematic"
-      , "TupleToolEventInfo"
-      , "TupleToolRecoStats",
-      "TupleToolTrigger",
-      "TupleToolPid",
-      "TupleToolPrimaries",
-      "TupleToolAngles",
       "TupleToolEventInfo",
-      "TupleToolGeometry",
-      "TupleToolKinematic",
-      "TupleToolPropertime",
       "TupleToolRecoStats",
       "TupleToolTrackInfo",
       "TupleToolTISTOS",
-      "TupleToolBremInfo",
-      "TupleToolPhotonInfo"#,
-      ,"TupleToolTrackIsolation"
-      , "TupleToolANNPID"
       
 ] # Probably need to add many more Tools.
 
@@ -184,33 +171,25 @@ TriggerListHlt =[
     "Hlt1DiMuonHighMassDecision",
     "Hlt1MuTrackDecision",
     "Hlt1TrackMuonDecision",
-    "Hlt2Topo2BodyBBDTDecision",
-    "Hlt2Topo3BodyBBDTDecision",
-    "Hlt2Topo4BodyBBDTDecision",
-    "Hlt2TopoE2BodyBBDTDecision",
-    "Hlt2TopoE3BodyBBDTDecision",
-    "Hlt2TopoE4BodyBBDTDecision",
     "Hlt2TopoMu2BodyBBDTDecision",
-    "Hlt2TopoMu3BodyBBDTDecision",
-    "Hlt2TopoMu4BodyBBDTDecision",
-    "Hlt2RadiativeTopoTrackTOSDecision",
-    "Hlt2RadiativeTopoPhotonL0Decision",
     "Hlt2SingleMuonDecision",
     "Hlt2DiMuonDetachedDecision"
+    "Hlt2DiMuonDetachedHeavyDecision"
+    "Hlt2DiMuonDetachedJpsiDecision"
 ]
 
 
 
-tupleB.Bplus.ToolList += [ "TupleToolTISTOS" ]
-tupleB.Bplus.addTool( TupleToolTISTOS, name = "TupleToolTISTOS" )
-tupleB.Bplus.TupleToolTISTOS.Verbose = True
-tupleB.Bplus.TupleToolTISTOS.TriggerList = TriggerListL0
-tupleB.Bplus.TupleToolTISTOS.TriggerList += TriggerListHlt
+#tupleB.Bplus.ToolList += [ "TupleToolTISTOS" ]
+#tupleB.Bplus.addTool( TupleToolTISTOS, name = "TupleToolTISTOS" )
+#tupleB.Bplus.TupleToolTISTOS.Verbose = True
+#tupleB.Bplus.TupleToolTISTOS.TriggerList = TriggerListL0
+#tupleB.Bplus.TupleToolTISTOS.TriggerList += TriggerListHlt
 
-tupleB.Bplus.TupleToolTISTOS.Verbose = True
-tupleB.Bplus.TupleToolTISTOS.VerboseL0= True
-tupleB.Bplus.TupleToolTISTOS.VerboseHlt1= True
-tupleB.Bplus.TupleToolTISTOS.VerboseHlt2= True
+#tupleB.Bplus.TupleToolTISTOS.Verbose = True
+#tupleB.Bplus.TupleToolTISTOS.VerboseL0= True
+#tupleB.Bplus.TupleToolTISTOS.VerboseHlt1= True
+#tupleB.Bplus.TupleToolTISTOS.VerboseHlt2= True
 
 
 
@@ -227,76 +206,16 @@ tupleB.Jpsi.TupleToolTISTOS.VerboseHlt1= True
 tupleB.Jpsi.TupleToolTISTOS.VerboseHlt2= True
 
 
-tupleB.addTool(TupleToolTrackInfo, name = "TupleToolTrackInfo")
-tupleB.TupleToolTrackInfo.Verbose=True
-tupleB.addTool(TupleToolRICHPid, name="TupleToolRICHPid")
-tupleB.TupleToolRICHPid.Verbose=True
-tupleB.addTool(TupleToolRecoStats, name="TupleToolRecoStats")
-tupleB.TupleToolRecoStats.Verbose=True
-tupleB.addTool(TupleToolGeometry, name="TupleToolGeometry")
-tupleB.TupleToolGeometry.Verbose=True
-tupleB.addTool(TupleToolPid, name="TupleToolPid")
-tupleB.TupleToolPid.Verbose=True
 
-tupleB.addTool(TupleToolANNPID, name = "TupleToolANNPID")
-tupleB.TupleToolANNPID.ANNPIDTunes = ['MC12TuneV2', 'MC12TuneV3', "MC12TuneV4"]
+#tupleB.addTool(TupleToolANNPID, name = "TupleToolANNPID")
+#tupleB.TupleToolANNPID.ANNPIDTunes = ['MC12TuneV2', 'MC12TuneV3', "MC12TuneV4"]
 
 
-tupleB.Bplus.addTupleTool( 'TupleToolSubMass' )
-tupleB.Bplus.ToolList += [ "TupleToolSubMass" ]
+#tupleB.Bplus.addTupleTool( 'TupleToolSubMass' )
+#tupleB.Bplus.ToolList += [ "TupleToolSubMass" ]
 
-tupleB.Bplus.TupleToolSubMass.Substitution += ["K+ => pi+"]
-tupleB.Bplus.TupleToolSubMass.Substitution += ["K+ => p+"]
-
-
-tupleB.lplus.addTupleTool( 'TupleToolL0Calo', name = "lplusL0ECalo" )
-tupleB.lplus.ToolList += [ "TupleToolL0Calo/lplusL0ECalo" ]
-tupleB.lplus.lplusL0ECalo.WhichCalo = "ECAL"
-tupleB.lminus.addTupleTool( 'TupleToolL0Calo', name = "lminusL0ECalo" )
-tupleB.lminus.ToolList += [ "TupleToolL0Calo/lminusL0ECalo" ]
-tupleB.lminus.lminusL0ECalo.WhichCalo = "ECAL"
-
-tupleB.lplus.addTupleTool( 'TupleToolL0Calo', name = "lplusL0HCalo" )
-tupleB.lplus.ToolList += [ "TupleToolL0Calo/lplusL0HCalo" ]
-tupleB.lplus.lplusL0HCalo.WhichCalo = "HCAL"
-tupleB.lminus.addTupleTool( 'TupleToolL0Calo', name = "lminusL0HCalo" )
-tupleB.lminus.ToolList += [ "TupleToolL0Calo/lminusL0HCalo" ]
-tupleB.lminus.lminusL0HCalo.WhichCalo = "HCAL"
-
-tupleB.Kplus.addTupleTool( 'TupleToolL0Calo', name = "KaonL0Calo" )
-tupleB.Kplus.ToolList += [ "TupleToolL0Calo/KaonL0Calo" ]
-tupleB.Kplus.KaonL0Calo.WhichCalo = "HCAL"
-
-
-tupleB.Bplus.addTupleTool( 'TupleToolDecayTreeFitter', name = "DTF" )
-tupleB.Bplus.addTupleTool( tupleB.Bplus.DTF.clone( "DTF_PV",
-                                             constrainToOriginVertex = True ) )
-tupleB.Bplus.ToolList += [ "TupleToolDecayTreeFitter/DTF_PV" ]
-tupleB.Bplus.addTupleTool( tupleB.Bplus.DTF.clone( "DTF_Jpsi",
-                                             constrainToOriginVertex = False,
-                                             daughtersToConstrain = [ "J/psi(1S)" ] ) )
-tupleB.Bplus.ToolList += [ "TupleToolDecayTreeFitter/DTF_Jpsi" ]
-tupleB.Bplus.addTupleTool( tupleB.Bplus.DTF.clone( "DTF_psi2S",
-                                             constrainToOriginVertex = False,
-                                             Substitutions = { "[ [B+]cc -> ^J/psi(1S) K+ ]CC" : "psi(2S)" },
-                                             daughtersToConstrain = [ "psi(2S)" ] ) )
-tupleB.Bplus.ToolList += [ "TupleToolDecayTreeFitter/DTF_psi2S" ]
-
-tupleB.addTool(TupleToolTrackInfo, name = "TupleToolTrackInfo")
-tupleB.TupleToolTrackInfo.Verbose=True
-tupleB.addTool(TupleToolRICHPid, name="TupleToolRICHPid")
-tupleB.TupleToolRICHPid.Verbose=True
-tupleB.addTool(TupleToolRecoStats, name="TupleToolRecoStats")
-tupleB.TupleToolRecoStats.Verbose=True
-tupleB.addTool(TupleToolGeometry, name="TupleToolGeometry")
-tupleB.TupleToolGeometry.Verbose=True
-tupleB.addTool(TupleToolPid, name="TupleToolPid")
-tupleB.TupleToolPid.Verbose=True
-
-tupleB.addTool(TupleToolANNPID, name = "TupleToolANNPID")
-tupleB.TupleToolANNPID.ANNPIDTunes = ['MC12TuneV2', 'MC12TuneV3', "MC12TuneV4"]
-
-
+#tupleB.Bplus.TupleToolSubMass.Substitution += ["K+ => pi+"]
+#tupleB.Bplus.TupleToolSubMass.Substitution += ["K+ => p+"]
 
 
 # rerun the Calo reconstruction 
@@ -316,7 +235,7 @@ DaVinci().InputType = "MDST"
 DaVinci().Simulation = False
 DaVinci().Lumi = True
 
-DaVinci().TupleFile = "bae-"+str(tuplename)+"-mc.root"
+DaVinci().TupleFile = "bae-"+str(tuplename)+"-data.root"
 
 MessageSvc().Format = "% F%60W%S%7W%R%T %0W%M"
 # database
