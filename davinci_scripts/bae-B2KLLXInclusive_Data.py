@@ -84,11 +84,10 @@ tupleB.Decay = decay
 
 
 tupleB.ToolList =  [
-      "TupleToolKinematic"
+      "TupleToolKinematic",
       "TupleToolEventInfo",
       "TupleToolRecoStats",
       "TupleToolTrackInfo",
-      "TupleToolTISTOS",
       
 ] # Probably need to add many more Tools.
 
@@ -159,23 +158,16 @@ LoKi_B.Variables = {
 
 
 TriggerListL0 = [
-    "L0ElectronDecision",
-    "L0HadronDecision",
     "L0MuonDecision",
     "L0DiMuonDecision"
   ]
 
 TriggerListHlt =[   
-    "Hlt1TrackAllL0Decision",
-    "Hlt1DiMuonLowMassDecision",
-    "Hlt1DiMuonHighMassDecision",
-    "Hlt1MuTrackDecision",
     "Hlt1TrackMuonDecision",
-    "Hlt2TopoMu2BodyBBDTDecision",
-    "Hlt2SingleMuonDecision",
-    "Hlt2DiMuonDetachedDecision"
-    "Hlt2DiMuonDetachedHeavyDecision"
-    "Hlt2DiMuonDetachedJpsiDecision"
+    "Hlt1TrackMVADecision",
+    "Hlt2TopoMu2BodyDecision",
+    "Hlt2TopoMuMu2BodyDecision",
+    "Hlt2DiMuonDetachedDecision",
 ]
 
 
